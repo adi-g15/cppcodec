@@ -1,6 +1,6 @@
-cmake_minimum_required(VERSION 2.8.5)
+cmake_minimum_required(VERSION 3.13)
 project(cppcodec CXX)
-set(PROJECT_VERSION 0.1)
+set(PROJECT_VERSION 0.3)
 
 include(GNUInstallDirs)
 
@@ -14,9 +14,9 @@ endif()
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-set(BUILD_TESTS OFF)
-set(BUILD_EXAMPLES OFF)
-set(BUILD_TOOLS OFF)
+option(BUILD_TESTS "Build tests" OFF)
+option(BUILD_EXAMPLES "Build bundled examples" OFF)
+option(BUILD_TOOLS "Build executable tools for encoding/decoding" OFF)
 
 if (MSVC)
   # MSVC will respect CMAKE_CXX_STANDARD for CMake >= 3.10 and MSVC >= 19.0.24215
